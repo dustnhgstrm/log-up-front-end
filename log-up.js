@@ -38,6 +38,9 @@ const inThatOneMovie = isValidPassword(thePassword);
 if (thisIsDifficult === true) {
   console.log("Welcome, you are logged in!");
 }
+if (getInput(3) !== undefined && getInput(4) !== undefined) {
+  thePassword += " " + getInput(3) + " " + getInput(4);
+}
 
 // 2. If the email belongs to one of our registered
 // users but the password does not match that user,
