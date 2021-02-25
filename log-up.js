@@ -29,24 +29,44 @@ const {
 // 1. If the email belongs to one of our registered
 // users AND the password matches that user, tell them
 // that they are logged in.
+const theEmail = getInput(1);
+const thePassword = getInput(2);
+const thisIsDifficult = passwordMatches(theEmail, thePassword);
+const maybeICrackedTheCode = isRegisteredUser(theEmail);
+const likeTomHanks = isValidEmail(theEmail);
+const inThatOneMovie = isValidPassword(thePassword);
+if (thisIsDifficult === true) {
+  console.log("Welcome, you are logged in!");
+}
 
 // 2. If the email belongs to one of our registered
 // users but the password does not match that user,
 // tell them their password is incorrect.
+else if (maybeICrackedTheCode === true && thisIsDifficult === false) {
+  console.log("Password for this account is incorrect");
+}
 
 // 3. If the email does not belong to one of our
 // registered users, and the email and password are
 // both valid, tell them they're signed up.
-
+else if (likeTomHanks === true && inThatOneMovie === true)
+  console.log("Thanks for signing up!");
 // 4. If the email does not belong to one of our
 // registered users, and the email is not valid,
 // tell them their email is not valid. Preferably
 // also tell them what makes a valid email.
-
+else if (maybeICrackedTheCode === false && likeTomHanks === false)
+  console.log(
+    "Your email is invalid. Please enter your unique login: 'username@codeimmersives.com."
+  );
 // 5. If the email does not belong to one of our
 // registered users, and the password is not valid,
 // tell them their password is not valid. Preferably
 // also tell them what makes a valid password.
+else if (maybeICrackedTheCode === false && inThatOneMovie === false)
+  console.log(
+    "Your password is invalid. It must be >= 8 characters and contain at least one capital and one lower case letter."
+  );
 
 // As long as given those inputs you get the right
 // outputs, how your branching `if` logic works is
